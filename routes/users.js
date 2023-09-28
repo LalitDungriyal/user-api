@@ -66,6 +66,20 @@ router.patch('/:id',getUser,async (req,res)=>{
 
 });
 
+//Deleting a user with given ID.
+
+router.delete('/:id',getUser,async (req,res)=>{
+
+	try{
+		const deletedUser = await User.findByIdAndRemove(res.user.id);
+		res.json({message: "User Deleted Successfully!!"});
+	}catch(err){
+		res.status(500).json({message: err.message });
+	}
+
+});
+
+
 async function getUser(req,res,next)
 {
 	try{
