@@ -22,7 +22,7 @@ const options = {
             description: "This documentation provides you the path to use the user-api which allows to perform CRUD operations on user.",
             contact: {
                 name: "Lalit Dungriyal",
-                url: "Lalitdungriyal4@gmail.com",
+                url: "https://user-api-l7au.onrender.com",
             }
         },
         servers: [
