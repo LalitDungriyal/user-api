@@ -8,7 +8,6 @@ const addressSchema = new mongoose.Schema({
   });
 
 const userSchema = new mongoose.Schema({
-    userGUID: { type: String, default: mongoose.Types.ObjectId },
     emailAddress: { type: String, required: true, unique: true },
     businessName: String,
     businessNumber: String,
