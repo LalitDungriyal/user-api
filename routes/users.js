@@ -1,3 +1,134 @@
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Retrieve a list of all users
+ *     responses:
+ *       '200':
+ *         description: Successful response
+ *         content:
+ *           application/json:
+ *             example:
+ *               - userGUID: '5f7b1211c6b1bb001c4d0b39'
+ *                 emailAddress: user1@example.com
+ *                 businessName: Business 1
+ *               - userGUID: '5f7b1211c6b1bb001c4d0b3a'
+ *                 emailAddress: user2@example.com
+ *                 businessName: Business 2
+ */
+
+/**
+ * @swagger
+ * /users:
+ *   post:
+ *     summary: Create a new user
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               emailAddress:
+ *                 type: string
+ *                 example: newuser@example.com
+ *               businessName:
+ *                 type: string
+ *                 example: New Business
+ *               # Other user properties...
+ *     responses:
+ *       '201':
+ *         description: User created successfully
+ *         content:
+ *           application/json:
+ *             example:
+ *               userGUID: '5f7b1211c6b1bb001c4d0b3b'
+ *               emailAddress: newuser@example.com
+ *               businessName: New Business
+ */
+
+/**
+ * @swagger
+ * /users/{id}:
+ *   patch:
+ *     summary: Update an existing user by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The unique ID of the user.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               emailAddress:
+ *                 type: string
+ *                 example: updated@example.com
+ *               businessName:
+ *                 type: string
+ *                 example: Updated Business
+ *               # Other user properties to update...
+ *     responses:
+ *       '200':
+ *         description: User updated successfully
+ *         content:
+ *           application/json:
+ *             example:
+ *               userGUID: '5f7b1211c6b1bb001c4d0b39'
+ *               emailAddress: updated@example.com
+ *               businessName: Updated Business
+ */
+
+/**
+ * @swagger
+ * /users/{id}:
+ *   get:
+ *     summary: Retrieve a specific user by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The unique ID of the user.
+ *     responses:
+ *       '200':
+ *         description: Successful response
+ *         content:
+ *           application/json:
+ *             example:
+ *               userGUID: '5f7b1211c6b1bb001c4d0b39'
+ *               emailAddress: user1@example.com
+ *               businessName: Business 1
+ */
+
+/**
+ * @swagger
+ * /users/{id}:
+ *   delete:
+ *     summary: Delete a user by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The unique ID of the user.
+ *     responses:
+ *       '200':
+ *         description: User deleted successfully
+ */
+
+
+
+
+
+
 const express = require('express')
 const router=express.Router()
 const User=require('../models/user');
